@@ -1,0 +1,140 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+
+                {#            <div class="row">#}
+                {#                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">#}
+                {#                    <div class="dash-widget dash-widget5">#}
+                {#                        <span class="float-left"><img src="assets/img/dash/dash-1.png" alt="" width="80"></span>#}
+                {#                        <div class="dash-widget-info text-right">#}
+                {#                            <span>Students</span>#}
+                {#                            <h3>60,000</h3>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                </div>#}
+                {##}
+                {#            </div>#}
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            En yaygın kullanılan ilaçlar
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>ilaç ismi</th>
+                                                    <th>ilaç sayısı</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for ilac in en_yaygin_ilaclar %}
+                                                    <tr>
+                                                        <td>{{ ilac.ilac_isim }}</td>
+                                                        <td>{{ ilac.ilac_sayim }}</td>
+                                                        </td>
+                                                    </tr>
+
+                                                {% endfor %}
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            En Yaygın ilaçları Kullanan Covidli Personeller
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>TC</th>
+                                                    <th>Ad</th>
+                                                    <th>Soyad</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for kullananlar in en_yaygin_ilac_kullananlar %}
+                                                    <tr>
+                                                        <td>{{ kullananlar.tc }}</td>
+                                                        <td>{{ kullananlar.ad }}</td>
+                                                        <td>{{ kullananlar.soyad }}</td>
+                                                    </tr>
+                                                {% endfor %}
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+<body>
+
+
+</body>
+
+
+
+
+
+
+
+
+

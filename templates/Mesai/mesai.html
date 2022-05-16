@@ -1,0 +1,79 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <h5 class="mb-0 mt-0 page-title">Mesai Saatleri</h5>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <ul class="breadcrumb float-right p-0 mb-0">
+                            <li class="breadcrumb-item"><a href="{% url 'baslik' %}"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                            <li class="breadcrumb-item"><span>Mesai Saatleri</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-12">
+                </div>
+                <div class="col-sm-8 col-12 text-right add-btn-col">
+                    <a href="{% url 'mesai-olusturma' %}" class="btn btn-primary float-right btn-rounded"><i
+                            class="fas fa-plus"></i>
+                        Mesai Ekle</a>
+                </div>
+            </div>
+            <div class="content-page">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>Personel</th>
+                                    <th>Gün</th>
+                                    <th>Başlangıç</th>
+                                    <th>Bitiş</th>
+                                    <th class="text-right"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for mesai in mesailer %}
+                                    <tr>
+                                        <td>
+                                            <h2><a href="#">{{ mesai.per }}</a></h2>
+                                        </td>
+                                        <td>{{ mesai.gun }}</td>
+                                        <td>{{ mesai.mesai_baslangic}}</td>
+                                        <td>{{ mesai.mesai_bitis }}</td>
+
+
+                                        <td class="text-right">
+                                            <a href="{% url 'mesai-guncelleme' mesai.id %}">
+                                                <i class="btn btn-success">Güncelle</i>
+                                            </a>
+
+                                            <a href="{% url 'mesai-silme' mesai.id %}">
+                                                <i class="btn btn-danger">Sil</i>
+                                            </a>
+
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

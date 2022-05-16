@@ -1,0 +1,186 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+        <div class="page-wrapper">
+        <div class="content container-fluid">
+
+            <div class="content-page">
+
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive">
+                            <table class="table custom-table datatable">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>Tc</th>
+                                    <th>Ad</th>
+                                    <th>Soyad</th>
+                                    <th>Pozisyon</th>
+                                    <th>Eğitim Seviyesi</th>
+                                     <th>Kan Grubu</th>
+                                    <th class="text-right"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <a href="{% url 'baslik' %}">{{ personel.tc }}</a>
+                                        </td>
+                                        <td>{{ personel.ad }}</td>
+                                        <td>{{ personel.soyad }}</td>
+                                        <td>{{ personel.posizyon }}</td>
+                                        <td>{{ personel.egitim_seviyesi }}</td>
+                                        <td>{{ personel.kan_grubu }}</td>
+
+
+
+                                        <td class="text-right">
+                                            <form method="post">
+                                        {% csrf_token %}
+
+                                        <div class="modal-body">
+
+                                            <div class="m-t-20"><a href="{% url 'personel-silme' personel.tc %}"
+                                                                   class="btn btn-white"
+                                                                   data-dismiss="modal">Güncelle</a>
+                                                <button type="submit" class="btn btn-danger">Sil</button>
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#    <div class="page-wrapper">#}
+{#        <div class="content container-fluid">#}
+{##}
+{#            <div class="row">#}
+{#                <div class="col-md-12 mb-3">#}
+{#                    <div class="table-responsive">#}
+{#                        <table class="table custom-table datatable">#}
+{#                            <thead class="thead-light">#}
+{#                            <tr>#}
+{#                                <th>First Name</th>#}
+{#                                <th>Last Name</th>#}
+{#                                <th>Tc</th>#}
+{#                                <th>Bloog Group</th>#}
+{#                                <th>Salary</th>#}
+{#                                <th>Level of Education</th>#}
+{#                                <th class="text-right">Action</th>#}
+{#                            </tr>#}
+{#                            </thead>#}
+{#                            <tbody>#}
+{##}
+{#                            <tr>#}
+{#                                <td>#}
+{#                                    <h2><a href="exam-detail.html" class="avatar text-white">C</a><a#}
+{#                                            href="exam-detail.html">{{ employee.first_name }}</a></h2>#}
+{#                                </td>#}
+{#                                <td>{{ employee.last_name }}</td>#}
+{#                                <td>{{ employee.tc }}</td>#}
+{#                                <td>{{ employee.blood_group }}</td>#}
+{#                                <td>{{ employee.salary }}</td>#}
+{#                                <td>{{ employee.level_of_education }}</td>#}
+{##}
+{#                                <td class="text-right">#}
+{##}
+{##}
+{#                                    <form method="post">#}
+{#                                        {% csrf_token %}#}
+{##}
+{#                                        <div class="modal-body">#}
+{##}
+{#                                            <div class="m-t-20"><a href="{% url 'delete-employee' employee.tc %}"#}
+{#                                                                   class="btn btn-white"#}
+{#                                                                   data-dismiss="modal"></a>#}
+{#                                                <button type="submit" class="btn btn-danger">Delete</button>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{##}
+{#                                    </form>#}
+{##}
+{#                                </td>#}
+{#                            </tr>#}
+{##}
+{##}
+{#                            </tbody>#}
+{#                        </table>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{##}
+{#        </div>#}
+{#    </div>#}
+
+    {#    <div id="delete_employee" class="modal" role="dialog">#}
+    {#        <div class="modal-dialog modal-dialog-centered">#}
+    {#            <div class="modal-content modal-md">#}
+    {#                <div class="modal-header">#}
+    {#                    <h4 class="modal-title">Delete Personel</h4>#}
+    {#                </div>#}
+    {#                <form method="post">#}
+    {#                    {% csrf_token %}#}
+    {##}
+    {#                        <div class="modal-body">#}
+    {#                        <p>Are you sure want to delete this {{ employee.tc }}?</p>#}
+    {#                        <div class="m-t-20"><a href="{% url 'delete-employee' employee.tc %}" class="btn btn-white"#}
+    {#                                               data-dismiss="modal">Close</a>#}
+    {#                            <button type="submit" class="btn btn-danger">Delete</button>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {##}
+    {##}
+    {##}
+    {##}
+    {#                </form>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+
+{% endblock %}
+
+

@@ -1,0 +1,41 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+    <body>
+
+    <div class="main-wrapper">
+
+
+
+
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="blog-view">
+                            <article class="blog blog-single-post">
+                                <h3 class="blog-title"></h3>
+
+                                <div class="blog-image">
+                                    <a href="#"><img alt="" src="{% static 'assets/img/blog/covid.jpeg' %}" class="img-fluid"></a>
+                                </div>
+
+                            </article>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </body>
+
+
+{% endblock %}

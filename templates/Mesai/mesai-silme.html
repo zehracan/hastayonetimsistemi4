@@ -1,0 +1,67 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+
+
+            <div class="content-page">
+
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive">
+                            <table class="table custom-table datatable">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>Personel</th>
+                                    <th>Gün</th>
+                                    <th>Başlangıç</th>
+                                    <th>Bitiş</th>
+                                    <th class="text-right"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+
+                                         <td>
+                                            <h2><a href="#">{{ mesai.per }}</a></h2>
+                                        </td>
+                                        <td>{{ mesai.gun }}</td>
+                                        <td>{{ mesai.mesai_baslangic }}</td>
+                                        <td>{{ mesai.mesai_bitis }}</td>
+
+
+                                    <td class="text-right">
+                                        <form method="post">
+                                            {% csrf_token %}
+
+                                            <div class="modal-body">
+
+                                                <div class="m-t-20">
+                                                    <button type="submit" class="btn btn-danger">Sil</button>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+

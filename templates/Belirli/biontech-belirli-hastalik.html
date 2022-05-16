@@ -1,0 +1,99 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+
+                <div class="row">
+{#                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">#}
+{#                        <div class="dash-widget dash-widget5">#}
+{##}
+{#                            <div class="dash-widget-info text-right">#}
+{#                                <h3>Toplam Çalışan Sayısı: <span style="color: blue"> {{ toplam }} </span></h3>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Biontech Aşısı Olup Covid Geçiren Zatürre Hastaları
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>TC</th>
+                                                    <th>Ad</th>
+                                                    <th>Soyad</th>
+                                                    <th>Hastalık</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                {% for personel in personeller %}
+                                                    <tr>
+                                                        <td>{{ personel.tc }}</td>
+                                                        <td>{{ personel.ad }}</td>
+                                                        <td>{{ personel.soyad }}</td>
+                                                        <td>{{ personel.h_isim }}</td>
+                                                    </tr>
+
+                                                {% endfor %}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+<body>
+
+
+</body>
+
+
+
+
+
+
+
+
+

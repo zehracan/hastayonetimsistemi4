@@ -1,0 +1,147 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+
+                <div class="row">
+{#                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">#}
+{#                        <div class="dash-widget dash-widget5">#}
+{##}
+{#                            <div class="dash-widget-info text-right">#}
+{#                                <h3>Toplam Çalışan Sayısı: <span style="color: blue"> {{ toplam }} </span></h3>#}
+{##}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Parol kullananlar
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>TC</th>
+                                                    <th>Ad</th>
+                                                    <th>Soyad</th>
+                                                    <th>İlaç ID</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                {% for ilackullanan in ilackullananlar %}
+                                                    <tr>
+                                                        <td>{{ ilackullanan.tc }}</td>
+                                                        <td>{{ ilackullanan.ad }}</td>
+                                                        <td>{{ ilackullanan.soyad }}</td>
+                                                        <td>{{ ilackullanan.ilac }}</td>
+                                                    </tr>
+
+                                                {% endfor %}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Parol kullanıp covid olanlar
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>TC</th>
+                                                    <th>Ad</th>
+                                                    <th>Soyad</th>
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                {% for ilackullanancovidli in ilackullanancovidliler %}
+                                                    <tr>
+                                                        <td>{{ ilackullanancovidli.tc }}</td>
+                                                        <td>{{ ilackullanancovidli.ad }}</td>
+                                                        <td>{{ ilackullanancovidli.soyad }}</td>
+                                                    </tr>
+
+                                                {% endfor %}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+<body>
+
+
+</body>
+
+
+
+
+
+
+
+
+

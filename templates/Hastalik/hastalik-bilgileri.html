@@ -1,0 +1,77 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <h5 class="mb-0 mt-0 page-title">Hastalık listesi</h5>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <ul class="breadcrumb float-right p-0 mb-0">
+                            <li class="breadcrumb-item"><a href="{% url 'baslik' %}"><i class="fas fa-home"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item"><span>Hastalık</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-12">
+                </div>
+                <div class="col-sm-8 col-12 text-right add-btn-col">
+                    <a href="{% url 'hastalik-olusturma' %}" class="btn btn-primary float-right btn-rounded"><i
+                            class="fas fa-plus"></i>
+                        Hastalık Ekle</a>
+                </div>
+            </div>
+            <div class="content-page">
+
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>Personel</th>
+                                    <th>Hastalık</th>
+                                    <th>Reçete</th>
+                                    <th class="text-right"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for hastalik in hastaliklar %}
+                                    <tr>
+                                        <td>
+                                            <h2><a href="{% url 'baslik' %}">{{ hastalik.per }}</a></h2>
+                                        </td>
+                                        <td>{{ hastalik.h_isim }}</td>
+                                        <td>{{ hastalik.recete }}</td>
+                                        <td class="text-right">
+                                            <a href="{% url 'hastalik-guncelleme' hastalik.h_id %}">
+                                                <i class="btn btn-success">Güncelle</i>
+                                            </a>
+
+                                            <a href="{% url 'hastalik-silme' hastalik.h_id %}">
+                                                <i class="btn btn-danger">Sil</i>
+                                            </a>
+
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

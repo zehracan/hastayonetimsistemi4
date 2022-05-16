@@ -1,0 +1,67 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+
+
+            <div class="content-page">
+
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive">
+                            <table class="table custom-table datatable">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>Personel</th>
+                                    <th>Hastalık</th>
+                                    <th>Reçete</th>
+                                    <th class="text-right"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td>
+                                        <h2><a href="{% url 'baslik' %}">{{ hastalik.per }}</a></h2>
+                                    </td>
+                                    <td>{{ hastalik.h_isim }}</td>
+                                    <td>{{ hastalik.recete }}</td>
+
+
+                                    <td class="text-right">
+                                        <form method="post">
+                                            {% csrf_token %}
+
+                                            <div class="modal-body">
+
+                                                <div class="m-t-20">
+{#                                                    <a href="{% url 'disease-delete' disease.dcode %}"#}
+{#                                                                       class="btn btn-white"#}
+{#                                                                       data-dismiss="modal">Delete</a>#}
+                                                    <button type="submit" class="btn btn-danger">Sil</button>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+

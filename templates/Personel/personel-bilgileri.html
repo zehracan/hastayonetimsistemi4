@@ -1,0 +1,109 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+    <style>
+    #zehra {
+    background-color: #8be962;
+    border: #3a8c13;
+    color: #ffffff;
+    border-radius: 12px;
+    }
+    </style>
+
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <h5 class="mb-0 mt-0 page-title">Personel Listesi</h5>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <ul class="breadcrumb float-right p-0 mb-0">
+                            <li class="breadcrumb-item"><a href="{% url 'baslik' %}"><i class="fas fa-home"></i>Ana Sayfa</a></li>
+                            <li class="breadcrumb-item"><span>Çalışanlar</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-12">
+                </div>
+                <div class="col-sm-8 col-12 text-left add-btn-col" >
+                    <a href="{% url 'personel-olustur' %}" class="btn btn-secondary float-right btn-rounded" id="zehra"><i
+                            class="fas fa-plus"></i>
+                        Çalışan Ekle</a>
+                </div>
+            </div>
+            <div class="content-page">
+{#                <div class="row filter-row">#}
+{#                    <div class="col-sm-6 col-md-3">#}
+{#                        <div class="form-group form-focus">#}
+{#                            <input type="text" class="form-control floating">#}
+{#                            <label class="focus-label">Çalisan Ekle</label>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-6 col-md-3">#}
+{#                        <div class="form-group form-focus">#}
+{#                            <input type="text" class="form-control floating">#}
+{#                            <label class="focus-label">Class</label>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-sm-6 col-md-3">#}
+{##}
+{#                    </div>#}
+{#                    <div class="col-sm-6 col-md-3">#}
+{#                        <a href="#" class="btn btn-search rounded btn-block mb-3"> search </a>#}
+{#                    </div>#}
+{#                </div>#}
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive">
+                            <table class="table custom-table">
+                                <thead class="thead-light">  {# üstteki tablonun bilgilerinin bulunduğu yapının rengi #}
+                                <tr>
+                                    <th>Tc</th>
+                                    <th>Ad</th>
+                                    <th>Soyad</th>
+                                    <th>Pozisyon</th>
+                                    <th>Eğitim Seviyesi</th>
+                                     <th>Kan Grubu</th>
+                                    <th class="text-right"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for personel in personeller %}
+                                    <tr>
+                                        <td>
+                                            <a href="{% url 'baslik' %}">{{ personel.tc }}</a>
+                                        </td>
+                                        <td>{{ personel.ad }}</td>
+                                        <td>{{ personel.soyad }}</td>
+                                        <td>{{ personel.posizyon }}</td>
+                                        <td>{{ personel.egitim_seviyesi }}</td>
+                                        <td>{{ personel.kan_grubu }}</td>
+                                        <td class="text-right">
+                                            <a href="{% url 'personel-guncelleme' personel.tc %}">
+                                                <i class="btn btn-success">Güncelle</i>
+                                            </a>
+
+                                            <a href="{% url 'personel-silme' personel.tc %}">
+                                                <i class="btn btn-danger">Sil</i>
+                                            </a>
+
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

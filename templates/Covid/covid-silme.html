@@ -1,0 +1,90 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+
+
+            <div class="content-page">
+
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="table-responsive">
+                            <table class="table custom-table datatable">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Personel</th>
+                                    <th>Doz</th>
+                                    <th>Aşı Türü</th>
+                                    <th>Aşı Durumu</th>
+                                    <th>Pozitif Tarih</th>
+                                    <th>Negatif Tarih</th>
+                                    <th class="text-right">Action</th>
+
+
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td> <h2><a href="#">{{ covid.covid_id }}</a></h2> </td>
+                                    <td>{{ covid.personel }}</td>
+                                    {% if covid.doz %}
+                                        <td>{{ covid.doz}}</td>
+                                    {% else %}
+                                        <td>-</td>
+                                    {% endif %}
+
+                                    {% if covid.asi_tipi %}
+                                        <td>{{ covid.asi_tipi }}</td>
+                                    {% else %}
+                                        <td>-</td>
+                                    {% endif %}
+                                    {% if covid.asili_mi == True %}
+                                        <td>Oldu</td>
+                                    {% else %}
+                                        <td>Olmadi</td>
+                                    {% endif %}
+                                    <td>{{ covid.p_tarih|date:"d/m/Y" }}</td>
+                                    {% if covid.n_tarih %}
+                                        <td>{{ covid.n_tarih|date:"d/m/Y" }}</td>
+                                    {% else %}
+                                        <td>Devam Ediyor</td>
+
+                                    {% endif %}
+
+
+                                    <td class="text-right">
+                                        <form method="post">
+                                            {% csrf_token %}
+
+                                            <div class="modal-body">
+
+                                                <div class="m-t-20">
+                                                    <button type="submit" class="btn btn-danger">Sil</button>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+
+                                    </td>
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,98 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                            <h5 class="text-uppercase mb-0 mt-0 page-title">En Yaygın 3 Covid Semptomu</h5>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                            <ul class="breadcrumb float-right p-0 mb-0">
+                                <li class="breadcrumb-item"><a href="{% url 'baslik' %}"><i class="fas fa-home"></i> Anasayfa</a>
+                                </li>
+                                <li class="breadcrumb-item"><span>En Yaygın Covid Semptomlar </span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-page">
+
+
+{#                    <div class="row">#}
+{#                        <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">#}
+{#                            <div class="dash-widget dash-widget5">#}
+{#                                <span class="float-left"><img src="assets/img/dash/dash-1.png" alt="" width="80"></span>#}
+{#                                <div class="dash-widget-info text-right">#}
+{#                                    <span>Students</span>#}
+{#                                    <h3>60,000</h3>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-12 d-flex">
+                            <div class="card flex-fill">
+                                <div class="card-header">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <div class="page-title">
+                                                Semptomlar
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table custom-table">
+                                                    <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Semptom</th>
+                                                        <th>Semptom Sayısı</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {% for symptom in semptomlar %}
+                                                        <tr>
+                                                            <td>
+                                                                <h2><a href="#">{{ symptom.semptom }}</a></h2>
+                                                            </td>
+                                                            <td>
+                                                                <h2><a href="#">{{ symptom.semptom_say }}</a></h2>
+                                                            </td>
+                                                        </tr>
+
+                                                    {% endfor %}
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

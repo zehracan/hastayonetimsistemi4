@@ -1,0 +1,180 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+
+
+            <div class="content container-fluid">
+
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-12 col-12 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Covid Geçiren Personeller
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>Covid ID</th>
+                                                    <th>Ad</th>
+                                                    <th>Soyad</th>
+                                                    <th>Başlangıç Tarihi</th>
+                                                    <th>Bitiş Tarihi</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for personel in covidpersonel %}
+                                                    <tr>
+                                                        <td>{{ personel.covid_id }}</td>
+                                                        <td>{{ personel.personel.ad }}</td>
+                                                        <td>{{ personel.personel.soyad }}</td>
+                                                        <td>{{ personel.p_tarih|date:"d/m/Y" }}</td>
+                                                        <td>{{ personel.n_tarih|date:"d/m/Y" }}</td>
+                                                    </tr>
+                                                {% endfor %}
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            en uzun süre covid geçiren  aşısız personel
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>TC</th>
+                                                    <th>Ad</th>
+                                                    <th>Soyad</th>
+                                                    <th>Covid Süresi</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for personel in personeller %}
+                                                    <tr>
+                                                        <td>{{ personel.tc }}</td>
+                                                        <td>{{ personel.ad }}</td>
+                                                        <td>{{ personel.soyad }}</td>
+                                                        <td>{{ personel.covid_t|floatformat }} Gün</td>
+                                                    </tr>
+                                                {% endfor %}
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Hastalık Ve Reçete Bilgisi
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>Hastalık</th>
+                                                    <th>Reçete ID</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for hastapersonel in hastapersoneller %}
+                                                    <tr>
+                                                        <td>{{ hastapersonel.h_isim }}</td>
+                                                        <td>{{ hastapersonel.recete_id }}</td>
+                                                    </tr>
+                                                {% endfor %}
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+<body>
+
+
+</body>
+
+
+
+
+
+
+
+
+

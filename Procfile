@@ -1,0 +1,1 @@
+web: gunicorn dbmsporjeodevi.wsgi --log-file=-

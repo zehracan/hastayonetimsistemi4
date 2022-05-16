@@ -1,0 +1,139 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                        <div class="dash-widget dash-widget5">
+
+                            <div class="dash-widget-info text-right">
+                                <h3>Toplam Covidli Çalışan Sayısı: <span style="color: blue"> {{ toplam }} </span></h3>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Aşı Olanlar
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>Sayı</th>
+                                                    <th>Yüzde</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>{{ aşılı_sayaç }}</td>
+                                                        <td>{{ aşılı_per }}</td>
+
+                                                        </td>
+                                                    </tr>
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Aşı Olmayanlar
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>Sayı</th>
+                                                    <th>Yüzde</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>{{ aşısız_sayaç }}</td>
+                                                        <td>{{ aşısız_per }}</td>
+                                                    </tr>
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+<body>
+
+
+</body>
+
+
+
+
+
+
+
+
+

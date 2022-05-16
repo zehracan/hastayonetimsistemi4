@@ -1,0 +1,130 @@
+{% extends 'baslik.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Covid Geçiren Biontech Aşılı Personeller
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>Personel Sayısı</th>
+                                                    <th>Toplam Süre</th>
+                                                    <th>Ortalama İyileşme Süresi</th>
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>{{ biontech.per_sayisi }}</td>
+                                                        <td>{{ biontech.toplam_sure }} Gün</td>
+                                                        <td>{{ biontech_ortalama }} Gün</td>
+
+
+                                                    </tr>
+
+
+
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                        <div class="card flex-fill">
+                            <div class="card-header">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <div class="page-title">
+                                            Covid Geçiren Sinovac Aşılı Personeller
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <thead class="thead-light">
+                                                <tr>
+                                                    <th>Personel Sayısı</th>
+                                                    <th>Toplam Süre</th>
+                                                    <th>Ortalama İyileşme Süresi</th>
+
+
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>{{ sinovac.per_sayisi }}</td>
+                                                        <td>{{ sinovac.toplam_sure }} Gün</td>
+                                                        <td>{{ sinovac_ortalama }} Gün</td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+
+
+
+<body>
+
+
+</body>
+
+
+
+
+
+
+
+
+
